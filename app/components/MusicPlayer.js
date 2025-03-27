@@ -26,18 +26,21 @@ export default function MusicPlayer() {
       setIsPlaying(false);
     });
     
-    // Auto-play when the page loads
-    audio.play().catch(e => {
-      console.log('Auto-play prevented:', e);
-      setIsPlaying(false);
+    // Auto-play when audio is loaded
+    audio.addEventListener('loadeddata', () => {
+      audio.play().catch(e => {
+        console.log('Auto-play prevented:', e);
+        setIsPlaying(false);
+      });
+      setIsPlaying(true);
     });
-    setIsPlaying(true);
     
     // Cleanup function
     return () => {
       audio.removeEventListener('ended', () => {
         setIsPlaying(false);
       });
+      audio.removeEventListener('loadeddata', () => {});
       audio.pause();
       audioRef.current = null;
     };
@@ -70,4 +73,4 @@ export default function MusicPlayer() {
       </motion.div>
     </div>
   );
-} 
+}
