@@ -739,8 +739,8 @@ function PodcastSection() {
 
   const podcastLinks = [
     { icon: <FaYoutube className="text-2xl" />, label: "YouTube", url: "https://www.youtube.com/@ojasoasis", color: "from-red-600 to-red-500" },
-    { icon: <FaSpotify className="text-2xl" />, label: "Spotify", url: "https://open.spotify.com/", color: "from-green-600 to-green-500" },
-    { icon: <FaApple className="text-2xl" />, label: "Apple Podcasts", url: "https://www.apple.com/apple-podcasts/", color: "from-purple-600 to-blue-500" },
+    { icon: <FaSpotify className="text-2xl" />, label: "Spotify", url: "https://open.spotify.com/show/0fxvWsU2N3ydmNPZVqqdDk", color: "from-green-600 to-green-500" },
+    { icon: <FaApple className="text-2xl" />, label: "Apple Podcasts", url: "https://podcasts.apple.com/ao/podcast/ojas-oasis-ayurvedic-wisdom-and-healing/id1615242839", color: "from-purple-600 to-blue-500" },
     { icon: <FaPodcast className="text-2xl" />, label: "Podcast Website", url: "https://www.ojasoasis.com", color: "from-blue-500 to-teal-400" },
   ];
 
@@ -917,8 +917,15 @@ function SocialMediaSection() {
   const socialLinks = [
     { 
       icon: <FaInstagram className="text-3xl" />, 
+      label: "Ojas Oasis Instagram", 
+      url: "https://www.instagram.com/ojasoasis", 
+      color: "bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500",
+      hover: "from-purple-600 via-pink-600 to-orange-600" 
+    },
+    { 
+      icon: <FaInstagram className="text-3xl" />, 
       label: "Instagram", 
-      url: "https://www.instagram.com/", 
+      url: "https://www.instagram.com/sashabershad", 
       color: "bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500",
       hover: "from-purple-600 via-pink-600 to-orange-600" 
     },
@@ -1028,34 +1035,7 @@ function SocialMediaSection() {
           ))}
         </div>
         
-        {/* Birthday wish box */}
-        <motion.div
-          variants={itemVariants}
-          className="bg-white rounded-2xl p-6 shadow-xl max-w-2xl mx-auto"
-        >
-          <h3 className="text-xl font-bold text-purple-600 mb-4">Leave a Birthday Wish</h3>
-          <p className="text-gray-600 mb-6">Share your birthday wishes and memories with Sasha!</p>
-          
-          <div className="flex flex-col gap-4">
-            <input 
-              type="text" 
-              placeholder="Your Name" 
-              className="px-4 py-3 rounded-xl border border-purple-100 focus:border-purple-300 focus:ring focus:ring-purple-200 focus:ring-opacity-50 outline-none"
-            />
-            <textarea 
-              placeholder="Your Birthday Message" 
-              rows={4}
-              className="px-4 py-3 rounded-xl border border-purple-100 focus:border-purple-300 focus:ring focus:ring-purple-200 focus:ring-opacity-50 outline-none"
-            />
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium py-3 rounded-xl"
-            >
-              Send Birthday Wish
-            </motion.button>
-          </div>
-        </motion.div>
+   
       </motion.div>
       
       {/* Background decorative elements */}

@@ -131,7 +131,7 @@ export default function MusicPlayer() {
               onClick={togglePlay}
               className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center"
             >
-              {isPlaying ? <FaPause size={16} /> : <FaPlay size={16} />}
+              {isPlaying ? <FaPause size={16} className="text-purple-600" /> : <FaPlay size={16} className="text-purple-600 ml-1" />}
             </motion.button>
             
             <motion.button
@@ -140,7 +140,7 @@ export default function MusicPlayer() {
               onClick={toggleMute}
               className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center"
             >
-              {isMuted ? <FaVolumeMute size={16} /> : <FaVolumeUp size={16} />}
+              {isMuted ? <FaVolumeMute size={16} className="text-purple-600" /> : <FaVolumeUp size={16} className="text-purple-600" />}
             </motion.button>
             
             <motion.button
@@ -149,7 +149,7 @@ export default function MusicPlayer() {
               onClick={playNextTrack}
               className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center"
             >
-              <FaForward size={16} />
+              <FaForward size={16} className="text-purple-600" />
             </motion.button>
           </div>
         </motion.div>

@@ -151,7 +151,7 @@ export default function MusicSection() {
                 
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="flex items-center text-gray-500">
-                    <FaMusic className="mr-2" />
+                    <FaMusic className="mr-2 text-purple-500" />
                     <span className="text-sm">Play this track</span>
                   </div>
                 </div>
