@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+check [package.json](mdc:package.json) before installing a new package
+
+website should be in rich with animation, should look very beautiful in ui ux
