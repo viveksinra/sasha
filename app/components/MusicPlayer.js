@@ -26,21 +26,38 @@ export default function MusicPlayer() {
       setIsPlaying(false);
     });
     
-    // Auto-play when audio is loaded
-    audio.addEventListener('loadeddata', () => {
-      audio.play().catch(e => {
-        console.log('Auto-play prevented:', e);
-        setIsPlaying(false);
-      });
-      setIsPlaying(true);
-    });
+    // Try to auto-play when component is mounted
+    const playAudio = () => {
+      audio.play()
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch(e => {
+          console.log('Auto-play prevented:', e);
+          setIsPlaying(false);
+          
+          // Add event listener for user interaction to enable audio
+          document.addEventListener('click', handleUserInteraction, { once: true });
+        });
+    };
+    
+    const handleUserInteraction = () => {
+      if (audioRef.current && !isPlaying) {
+        audioRef.current.play()
+          .then(() => setIsPlaying(true))
+          .catch(e => console.log('Play prevented after interaction:', e));
+      }
+    };
+    
+    // Try to auto-play
+    playAudio();
     
     // Cleanup function
     return () => {
+      document.removeEventListener('click', handleUserInteraction);
       audio.removeEventListener('ended', () => {
         setIsPlaying(false);
       });
-      audio.removeEventListener('loadeddata', () => {});
       audio.pause();
       audioRef.current = null;
     };
@@ -59,7 +76,7 @@ export default function MusicPlayer() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-30 sm:right-4">
+    <div className="fixed bottom-4 left-4 z-30">
       {/* Floating music button - play/stop only */}
       <motion.div
         whileHover={{ scale: 1.1 }}

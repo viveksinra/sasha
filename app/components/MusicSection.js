@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaPlay, FaPause, FaMusic } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function MusicSection() {
   const controls = useAnimation();
@@ -155,44 +156,24 @@ export default function MusicSection() {
           </div>
         </motion.div>
 
-        <h3 className="text-xl font-bold text-purple-700 mb-6 mt-12">Additional Birthday Songs</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {additionalTracks.map((track) => (
-            <motion.div
-              key={track.id}
-              variants={itemVariants}
-              className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform"
+        {/* View More Songs Button */}
+        <motion.div
+          variants={itemVariants}
+          className="mt-12 text-center"
+        >
+          <Link href="/music">
+            <motion.button
+              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-medium shadow-lg"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
+              }}
+              whileTap={{ scale: 0.98 }}
             >
-              <div className="p-6">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-purple-700 mb-2">{track.title}</h3>
-                    <p className="text-gray-600">{track.description}</p>
-                  </div>
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={() => playTrack(track)}
-                    className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center shadow-md"
-                  >
-                    {playingTrack && playingTrack.id === track.id ? (
-                      <FaPause className="text-white" />
-                    ) : (
-                      <FaPlay className="text-white ml-1" />
-                    )}
-                  </motion.button>
-                </div>
-                
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="flex items-center text-gray-500">
-                    <FaMusic className="mr-2 text-purple-500" />
-                    <span className="text-sm">Play this track</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              View More Songs
+            </motion.button>
+          </Link>
+        </motion.div>
       </motion.div>
     </section>
   );

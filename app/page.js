@@ -30,17 +30,18 @@ export default function Home() {
       {/* Birthday Greeting Section */}
       <BirthdayGreeting />
       
-      {/* Memories Section */}
-      <MemoriesSection />
+
       
       {/* Music Section */}
       <MusicSection />
-      
+            {/* Memories Section */}
+            <MemoriesSection />
+      {/* Podcast Section */}
+      <PodcastSection />
       {/* Gallery Section */}
       <GallerySection />
       
-      {/* Podcast Section */}
-      <PodcastSection />
+
       
       {/* Social Media Section */}
       <SocialMediaSection />
@@ -467,21 +468,7 @@ function MemoriesSection() {
         </div>
         
         {/* View more memories button */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-12 text-center"
-        >
-          <motion.button
-            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-medium shadow-lg"
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
-            }}
-            whileTap={{ scale: 0.98 }}
-          >
-            View All Memories
-          </motion.button>
-        </motion.div>
+
       </motion.div>
 
       {showLightbox && (
@@ -546,9 +533,30 @@ function GallerySection() {
     { src: "/images/sashaHeadshots/edited.jpg", alt: "Sasha Portrait 9" },
   ];
 
+  // Only show first 3 images on homepage
+  const homePageGallery = gallery.slice(0, 3);
+
   const openLightbox = (index) => {
     setLightboxIndex(index);
     setShowLightbox(true);
+  };
+
+  // Share functionality
+  const shareGallery = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Sasha\'s Gallery',
+        text: 'Check out Sasha\'s beautiful gallery!',
+        url: 'https://sasha.viveksinra.com/gallery',
+      })
+      .catch((error) => console.log('Error sharing:', error));
+    } else {
+      // Fallback for browsers that don't support navigator.share
+      const shareUrl = 'https://sasha.viveksinra.com/gallery';
+      navigator.clipboard.writeText(shareUrl)
+        .then(() => alert('Gallery link copied to clipboard!'))
+        .catch((error) => console.log('Error copying to clipboard:', error));
+    }
   };
 
   return (
@@ -624,7 +632,7 @@ function GallerySection() {
         </motion.div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {gallery.map((image, index) => (
+          {homePageGallery.map((image, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -671,15 +679,17 @@ function GallerySection() {
           variants={itemVariants}
           className="mt-12 flex justify-center gap-4"
         >
-          <motion.button
+          <motion.a
+            href="/gallery"
             className="bg-white text-purple-600 px-6 py-3 rounded-full font-medium shadow-md border border-purple-100"
             whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)" }}
             whileTap={{ scale: 0.98 }}
           >
             View Full Gallery
-          </motion.button>
+          </motion.a>
           
           <motion.button
+            onClick={shareGallery}
             className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-medium shadow-md"
             whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)" }}
             whileTap={{ scale: 0.98 }}
