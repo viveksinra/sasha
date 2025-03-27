@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Happy Birthday Sasha!",
-  description: "A tribute to Sasha Bershadsky on her birthday - March 27, 2025",
+  description: "A gift to Sasha Bershadsky on her birthday - March 27, 2025",
 };
 
 export default function RootLayout({ children }) {

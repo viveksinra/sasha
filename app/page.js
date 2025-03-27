@@ -48,7 +48,7 @@ export default function Home() {
       
       {/* Footer */}
       <footer className="py-6 text-center text-gray-600">
-        <p>Created with ❤️ for Sasha | Birthday 2025</p>
+        <p>Created with ❤️ for Sasha | Birthday 2025 by <a href="https://www.viveksinra.com/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-800 transition-colors duration-300">Vivek</a></p>
       </footer>
     </div>
   );

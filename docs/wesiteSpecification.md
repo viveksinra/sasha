@@ -1,7 +1,7 @@
-# Website Specification: Sasha's Birthday Tribute
+# Website Specification: Sasha's Birthday gift
 
 **Objective:**  
-Create a Next.js website dedicated to celebrating Sasha Bershadsky's birthday on March 27, 2025. The site should be a visually engaging tribute featuring personalized content, beautiful animations, and comprehensive information about Sasha.
+Create a Next.js website dedicated to celebrating Sasha Bershadsky's birthday on March 27, 2025. The site should be a visually engaging gift featuring personalized content, beautiful animations, and comprehensive information about Sasha.
 
 ---
 
@@ -83,4 +83,4 @@ Create a Next.js website dedicated to celebrating Sasha Bershadsky's birthday on
 
 ---
 
-This specification should serve as the detailed blueprint for building Sasha’s birthday website on Cursor using Next.js. The focus is on a beautifully animated, media-rich tribute that celebrates Sasha's life and work.
+This specification should serve as the detailed blueprint for building Sasha’s birthday website on Cursor using Next.js. The focus is on a beautifully animated, media-rich gift that celebrates Sasha's life and work.
