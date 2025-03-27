@@ -15,29 +15,32 @@ export default function MusicSection() {
   const [playingTrack, setPlayingTrack] = useState(null);
   const audioRef = useRef(null);
 
-  const tracks = [
-    {
-      id: 1,
-      title: "Birthday Song 1",
-      path: "/music/SashabirthdaySong (1).mp3",
-      description: "A beautiful birthday melody to celebrate your special day"
-    },
+  // Keep the main track as our default track
+  const mainTrack = {
+    id: 1,
+    title: "Birthday Song",
+    path: "/music/SashabirthdaySong1.mp3",
+    description: "The official birthday melody to celebrate your special day"
+  };
+  
+  // Keep other tracks as additional options
+  const additionalTracks = [
     {
       id: 2,
       title: "Birthday Song 2",
-      path: "/music/SashabirthdaySong (2).mp3",
+      path: "/music/SashabirthdaySong2.mp3",
       description: "An upbeat celebration tune to brighten your birthday"
     },
     {
       id: 3,
       title: "Birthday Song 3",
-      path: "/music/SashabirthdaySong (3).mp3",
+      path: "/music/SashabirthdaySong3.mp3",
       description: "A heartfelt composition dedicated to your birthday"
     },
     {
       id: 4,
       title: "Birthday Song 4",
-      path: "/music/SashabirthdaySong (4).mp3",
+      path: "/music/SashabirthdaySong4.mp3",
       description: "A special melody created just for your birthday celebration"
     }
   ];
@@ -122,8 +125,39 @@ export default function MusicSection() {
           </p>
         </motion.div>
 
+        {/* Main featured track */}
+        <motion.div
+          variants={itemVariants}
+          className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform mb-10 border-2 border-purple-200"
+        >
+          <div className="p-8">
+            <div className="flex items-start justify-between">
+              <div>
+                <h3 className="text-2xl font-bold text-purple-700 mb-3">{mainTrack.title}</h3>
+                <p className="text-gray-600 text-lg">{mainTrack.description}</p>
+                <div className="mt-4 inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">
+                  Featured Birthday Song
+                </div>
+              </div>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => playTrack(mainTrack)}
+                className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center shadow-md"
+              >
+                {playingTrack && playingTrack.id === mainTrack.id ? (
+                  <FaPause className="text-white text-xl" />
+                ) : (
+                  <FaPlay className="text-white ml-1 text-xl" />
+                )}
+              </motion.button>
+            </div>
+          </div>
+        </motion.div>
+
+        <h3 className="text-xl font-bold text-purple-700 mb-6 mt-12">Additional Birthday Songs</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {tracks.map((track) => (
+          {additionalTracks.map((track) => (
             <motion.div
               key={track.id}
               variants={itemVariants}
