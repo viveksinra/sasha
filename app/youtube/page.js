@@ -68,16 +68,26 @@ export default function YouTubePage() {
       publishedAt: "2.1 years ago"
     },
     {
-      id: "3VuTFeosu3A",
-      title: "Connect with CONNECT for Community Wellbeing",
-      description: `In this video, the focus is on community well-being and the importance of building connections to support collective health and harmony.`,
-      publishedAt: "1 year ago"
+      id: "r7fgV6QOwho",
+      title: "Food is Love and Medicine with Divya Alter and Sasha Bershadsky | Ojas Oasis",
+      description: `Join Sasha Bershadsky and renowned Ayurvedic chef Divya Alter as they explore the transformative power of Ayurvedic cooking and healing through food. Divya, founder of NYC's acclaimed Divya's Kitchen and bestselling author, shares her 30-year journey with Ayurveda, practical tips for mindful cooking, and how to create nourishing meals that heal both body and mind. Learn about:
+
+The principles of Ayurvedic cooking and food as medicine
+Common misconceptions about vegetarian protein and Ayurvedic diet
+How mental state affects cooking and digestion
+Simple ways to start incorporating Ayurvedic principles into your kitchen
+Essential ingredients for an Ayurvedic pantry
+The connection between local, seasonal eating and wellness
+
+Whether you're new to Ayurveda or a seasoned practitioner, this heart-centered conversation offers valuable insights into creating a balanced, healthy relationship with food. Discover why every healer must also understand the art of cooking for true holistic wellness.
+#Ayurveda #AyurvedicCooking #HolisticHealth #Wellness #FoodAsMedicine #MindfulEating #HealthyLiving #VegetarianCooking #AyurvedicDiet #Nutrition`,
+      publishedAt: "2 months ago"
     },
     {
-      id: "OngbSF53odY",
-      title: "Say BUH-BYE to Comparison & Start Living the Life YOU Deserve!!",
-      description: `This episode addresses the pitfalls of self-comparison and offers insights on embracing one's unique journey to live a fulfilling life.`,
-      publishedAt: "4 months ago"
+      id: "IbRpt-1OjVA",
+      title: "Understand and Alleviate Your Anxiety",
+      description: `This class is brought to you by The Happy Body Summit, a 3 day online event created and hosted by Kendra Irvine from Living Light Ayurveda. Sasha Bershadsky is a Dharmic Clinical Ayurvedic Specialist, teacher, and humble student. She is so happy to bring the knowledge and wisdom of this mind/body system to the general public. We pray Ayurveda finds all those who are seeking it. May this class help bring relief to all those who suffer from Anxiety, whether it be for themself, their family, or friends. Hari Om!`,
+      publishedAt: "2 years ago"
     }
   ];
 

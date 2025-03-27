@@ -7,6 +7,8 @@ import { useInView } from 'react-intersection-observer';
 import { FaInstagram, FaGlobe, FaYoutube, FaSpotify, FaPodcast, FaApple } from 'react-icons/fa';
 import Lightbox from './components/Lightbox';
 import YouTubeEmbed from './components/YouTubeEmbed';
+import MusicPlayer from './components/MusicPlayer';
+import MusicSection from './components/MusicSection';
 
 export default function Home() {
   const [confetti, setConfetti] = useState(false);
@@ -19,6 +21,9 @@ export default function Home() {
   
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-pink-100 to-purple-100">
+      {/* Background Music Player - Floating control */}
+      <MusicPlayer />
+      
       {/* Confetti Animation */}
       {confetti && <Confetti />}
       
@@ -27,6 +32,9 @@ export default function Home() {
       
       {/* Memories Section */}
       <MemoriesSection />
+      
+      {/* Music Section */}
+      <MusicSection />
       
       {/* Gallery Section */}
       <GallerySection />
